@@ -47,12 +47,12 @@ class LabelmakerCog(commands.Cog):
 
             def format_response(self, interaction: Interaction["BallsDexBot"], response: str) -> str:
                 return response.format(
-                    user=interaction.user.mention,
+                    user=str(interaction.user.mention),
                     collectibles=settings.plural_collectible_name,
                     collectible=settings.collectible_name,
                     ball=self.model.country,
                     rarity=self.model.rarity,
-                    emoji=self.bot.get_emoji(self.model.emoji_id),
+                    emoji=str(self.bot.get_emoji(self.model.emoji_id)),
                     discord=settings.discord_invite,
                 )
 

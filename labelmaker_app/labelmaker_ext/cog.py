@@ -54,6 +54,7 @@ class LabelmakerCog(commands.Cog):
                     rarity=self.model.rarity,
                     emoji=str(self.bot.get_emoji(self.model.emoji_id)),
                     discord=settings.discord_invite,
+                    first=self.model.country[0]
                 )
 
             async def on_timeout(self):
